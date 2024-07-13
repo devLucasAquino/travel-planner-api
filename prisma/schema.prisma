@@ -14,12 +14,12 @@ model Trip {
   ends_at      DateTime
   is_confirmed Boolean       @default(false)
   created_at   DateTime      @default(now())
-  pasticipants  Pasticipant[]
+  pasticipants  Participant[]
 
   @@map("trips")
 }
 
-model Pasticipant {
+model Participant {
   id           String  @id @default(uuid())
   name         String?
   email        String
