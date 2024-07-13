@@ -1,6 +1,7 @@
 import { FastifyInstance } from "fastify";
 import { z } from 'zod';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
+import { prisma } from "../lib/prisma";
 
 export async function createTrip(app: FastifyInstance){
     app.withTypeProvider<ZodTypeProvider>().post('/trips', {
@@ -14,11 +15,13 @@ export async function createTrip(app: FastifyInstance){
     }, async (request) => {
         const { destination, starts_at, ends_at } = request.body;
 
-
-        return {
-            destination,
-            starts_at,
-            ends_at
-        }
+        const trip = await prisma.trip.create({
+            data: {
+                destination,
+                starts_at,
+                ends_at,
+            }
+        })
+        return { tripId: trip.id }
     })
 }
