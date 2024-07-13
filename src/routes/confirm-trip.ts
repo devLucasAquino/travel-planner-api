@@ -4,7 +4,7 @@ import 'dayjs/locale/pt-br';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
 
 export async function confirmTrip(app: FastifyInstance){
-    app.withTypeProvider<ZodTypeProvider>().post('/trips/:tripId/confirm', {
+    app.withTypeProvider<ZodTypeProvider>().get('/trips/:tripId/confirm', {
         schema: {
             params: z.object({
                 tripId: z.string().uuid(),
