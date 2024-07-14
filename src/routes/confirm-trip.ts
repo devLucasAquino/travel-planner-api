@@ -1,3 +1,4 @@
+import { env } from './../env';
 import 'dayjs/locale/pt-br';
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
@@ -37,7 +38,7 @@ export async function confirmTrip(app: FastifyInstance){
             }
 
             if(trip.is_confirmed){
-                return reply.redirect(`http://localhost:3000/trips/${tripId}`)
+                return reply.redirect(`${env.WEB_BASE_URL}/trips/${tripId}`)
             }
 
             await prisma.trip.update({
