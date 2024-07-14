@@ -47,8 +47,6 @@ export async function confirmTrip(app: FastifyInstance){
             const formattedStartDate = dayjs(trip.starts_at).format('LL');
             const formattedEndDate = dayjs(trip.ends_at).format('LL');
        
-            
-
             const mail = await getMailClient();
 
             await Promise.all(
