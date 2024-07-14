@@ -3,6 +3,7 @@ import { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod';
 import { dayjs } from '../lib/dayjs';
 import { prisma } from "../lib/prisma";
+import { ClientError } from "../errors/client-error";
 
 
 export async function updateTrip(app: FastifyInstance){
@@ -26,15 +27,15 @@ export async function updateTrip(app: FastifyInstance){
         })
 
         if(!trip){
-            throw new Error('Trip not found.')
+            throw new ClientError('Trip not found.')
         }
 
         if(dayjs(starts_at).isBefore(new Date())){
-            throw new Error('invalid trip start date.');
+            throw new ClientError('invalid trip start date.');
         }
 
         if(dayjs(ends_at).isBefore(starts_at)){
-            throw new Error('invalid trip end date.');
+            throw new ClientError('invalid trip end date.');
         }
 
         await prisma.trip.update({
