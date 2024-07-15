@@ -13,3 +13,5 @@ Este repositório armazena o **código front do projeto travel planner**, que co
 ## Tecnologias utilizadas
 
 [![My Skills](https://skillicons.dev/icons?i=js,ts,nodejs,prisma,sqlite,postman,vscode)](https://skillicons.dev)
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=fff&height=120&section=footer"/>
