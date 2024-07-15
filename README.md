@@ -1,6 +1,6 @@
 # Travel Planner API
 
-Este repositório armazena o **código front do projeto travel planner**, que consiste em um **aplicativo web, onde o usuário realiza o planejamento de suas futuras viagens**.
+Este repositório armazena o **código backend do projeto travel planner**, que consiste em um **aplicativo web, onde o usuário realiza o planejamento de suas futuras viagens**.
 ##### O usuário tem as opções:
 - Escolher o destino da viagem, datas de ínicio e término; 
 - Convidar conhecidos através de e-mails pré-estabelecidos pelo sistema;
