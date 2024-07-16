@@ -1,5 +1,5 @@
 {
-  "name": "travel-planner-backend",
+  "name": "travel-planner-api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
